@@ -1,0 +1,18 @@
+{
+  "name": "@micro/html-sub",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "zhangxuan615 <332737341@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/react.js",
+  "scripts": {
+    "start": "yarn dev",
+    "dev": "nodemon ./index.js"
+  },
+  "devDependencies": {
+    "art-template": "^4.13.2",
+    "express": "^4.17.1",
+    "express-art-template": "^1.0.1"
+  }
+}

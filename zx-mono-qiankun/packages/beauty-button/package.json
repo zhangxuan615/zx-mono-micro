@@ -1,0 +1,25 @@
+{
+  "name": "@web/beauty-button",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "zhangxuan615 <332737341@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/beauty-button.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://registry.npm.taobao.org/"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "math": "^0.0.3"
+  }
+}
