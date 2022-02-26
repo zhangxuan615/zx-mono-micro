@@ -1,17 +1,17 @@
 // 子应用生命周期状态
 export enum AppStatusEn {
-  NOT_LOADED = 'NOT_LOADED', // ** 子应用初始化的资源未加载状态
+  NOT_LOADED = "NOT_LOADED", // ** 子应用初始化的资源未加载状态
 
-  LOADING = 'LOADING', // 开始加载子应用资源
-  LOADED = 'LOADED', // ** 子应用资源加载完成
+  LOADING = "LOADING", // 开始加载子应用资源
+  LOADED = "LOADED", // ** 子应用资源加载完成
 
-  BOOTSTRAPPING = 'BOOTSTRAPPING', // 子应用首次触发加载
-  NOT_MOUNTED = 'NOT_MOUNTED', // ** 子应用未挂载
+  BOOTSTRAPPING = "BOOTSTRAPPING", // 子应用首次触发加载
+  NOT_MOUNTED = "NOT_MOUNTED", // ** 子应用未挂载
 
-  MOUNTING = 'MOUNTING', // 开始挂载子应用
-  MOUNTED = 'MOUNTED', // ** 子应用挂载完成
+  MOUNTING = "MOUNTING", // 开始挂载子应用
+  MOUNTED = "MOUNTED", // ** 子应用挂载完成
 
-  UNMOUNTING = 'UNMOUNTING', // 卸载前
+  UNMOUNTING = "UNMOUNTING", // 卸载前
 }
 
 // 子应用生命周期函数类型
@@ -44,4 +44,4 @@ export interface ILifeCycle {
 }
 
 // 路由劫持事件类型
-export type EventType = 'hashchange' | 'popstate';
+export type EventType = "hashchange" | "popstate";
