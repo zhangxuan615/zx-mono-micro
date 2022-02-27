@@ -1,10 +1,8 @@
-import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { renderRoutes } from 'react-router-config';
-import { NavLink } from 'react-router-dom';
-import { Layout, Menu, Breadcrumb } from 'antd';
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
-
+import { Layout } from 'antd';
+import { registerMicroApps, start } from 'qiankun';
+import appRoutes from '../../routes/app.config';
 import { icons } from '@assets/imgs';
 import NavMenu from './NavMenu';
 
@@ -14,6 +12,29 @@ const { Header, Footer, Sider, Content } = Layout;
 
 const BasicLayout: React.FC<any> = props => {
   const { route } = props;
+
+  useEffect(() => {
+    registerMicroApps(appRoutes, {
+      beforeLoad: async app => console.log('before load', app.name),
+      beforeMount: [
+        async app => console.log('beforeMount', app.name),
+        async app => console.log('beforeMount22222', app.name)
+      ],
+      afterMount: [
+        async app => console.log('afterMount', app.name),
+        async app => console.log('afterMount22222', app.name)
+      ],
+      beforeUnmount: [
+        async app => console.log('beforeUnmount', app.name),
+        async app => console.log('beforeUnmount22222', app.name)
+      ],
+      afterUnmount: [
+        async app => console.log('afterUnmount', app.name),
+        async app => console.log('afterUnmount22222', app.name)
+      ]
+    });
+    start();
+  }, []);
 
   return (
     <Layout className={styles['basic-layout-container']}>
@@ -61,23 +82,6 @@ const BasicLayout: React.FC<any> = props => {
       </Layout>
     </Layout>
   );
-
-  // return (
-  //   <div className={styles.rootContainer}>
-  //     <div className={styles.menus}>
-  //       <NavLink activeStyle={{ color: "red" }} to="/">
-  //         <div>home</div>
-  //       </NavLink>
-  //       <NavLink activeStyle={{ color: "red" }} to="/product">
-  //         <div>product</div>
-  //       </NavLink>
-  //       <NavLink activeStyle={{ color: "red" }} to="/order">
-  //         <div>order</div>
-  //       </NavLink>
-  //     </div>
-  //     <div className={styles.menus}>{renderRoutes(route.routes)}</div>
-  //   </div>
-  // );
 };
 
 export default BasicLayout;

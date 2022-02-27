@@ -1,12 +1,11 @@
 import { Button } from 'antd';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import UserInfo from './UserInfo';
 
 import styles from './index.less';
 
 function Home() {
   const [cnt, setCnt] = useState(0);
-  console.log('home');
 
   return (
     <div className={styles['home-container']}>

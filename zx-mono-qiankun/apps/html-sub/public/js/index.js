@@ -1,22 +1,20 @@
-const render = $ => {
-  $('#purehtml-container').html('Hello, render with jQuery');
-  return Promise.resolve(10);
+console.log('start parse html-sub');
+
+const render = async () => {
+  document.getElementById('purehtml-container').innerHTML = 'Hello, render with html-sub';
 };
 
 (global => {
   global['purehtml'] = {
-    bootstrap: () => {
+    bootstrap: async () => {
       console.log('purehtml bootstrap');
-      return Promise.resolve();
     },
-    mount: () => {
+    mount: async () => {
       console.log('purehtml mount');
-      // eslint-disable-next-line no-undef
-      return render($);
+      render();
     },
-    unmount: () => {
+    unmount: async () => {
       console.log('purehtml unmount');
-      return Promise.resolve();
     }
   };
 })(window);

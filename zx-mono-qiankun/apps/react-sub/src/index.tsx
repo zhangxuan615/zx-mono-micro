@@ -5,6 +5,8 @@ import App from './App';
 
 import '@/assets/styles/global.less';
 
+console.log('start parse react-sub');
+
 function render(props: any) {
   ReactDOM.render(<App />, document.getElementById('sub-react-root'));
 }
@@ -14,14 +16,14 @@ if (!window.__POWERED_BY_QIANKUN__) {
 }
 
 export async function bootstrap() {
-  console.log('bootstrap ...');
+  console.log('react-sub bootstrap ...');
 }
 
 export async function mount(props: any) {
-  console.log('mount ...');
+  console.log('react-sub mount ...');
   render(props);
 }
 
 export async function unmount(props: any) {
-  console.log('unmount ...');
+  console.log('react-sub unmount ...');
 }

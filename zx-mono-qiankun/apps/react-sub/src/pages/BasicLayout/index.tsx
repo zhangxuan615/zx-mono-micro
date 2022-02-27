@@ -1,10 +1,6 @@
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
-import { NavLink } from 'react-router-dom';
-import { Layout, Menu, Breadcrumb } from 'antd';
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
-
+import { Layout } from 'antd';
 import { icons } from '@assets/imgs';
 import NavMenu from './NavMenu';
 
@@ -60,23 +56,6 @@ const BasicLayout: React.FC<any> = props => {
       </Layout>
     </Layout>
   );
-
-  // return (
-  //   <div className={styles.rootContainer}>
-  //     <div className={styles.menus}>
-  //       <NavLink activeStyle={{ color: "red" }} to="/">
-  //         <div>home</div>
-  //       </NavLink>
-  //       <NavLink activeStyle={{ color: "red" }} to="/product">
-  //         <div>product</div>
-  //       </NavLink>
-  //       <NavLink activeStyle={{ color: "red" }} to="/order">
-  //         <div>order</div>
-  //       </NavLink>
-  //     </div>
-  //     <div className={styles.menus}>{renderRoutes(route.routes)}</div>
-  //   </div>
-  // );
 };
 
 export default BasicLayout;

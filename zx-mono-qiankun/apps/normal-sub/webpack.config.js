@@ -1,19 +1,18 @@
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const name = 'normal-sub22';
-
 module.exports = {
   mode: 'production', // 控制开发还是生产模式
   entry: './index.js',
   output: {
-    path: resolve(__dirname, 'build'),
-    filename: './bundle.js',
-    publicPath: '/',
-    // jsonpFunction: 'abdddddd',
-    chunkLoadingGlobal: 'myCustomFunc',
+    library: 'normal-sub',
     libraryTarget: 'umd',
     globalObject: 'window',
+    chunkLoadingGlobal: 'sub-normal-global',
+
+    path: resolve(__dirname, 'build'),
+    filename: 'bundle.js',
+    publicPath: '.',
     clean: true // 代替  CleanWebpackPlugin 插件
   },
   resolve: {

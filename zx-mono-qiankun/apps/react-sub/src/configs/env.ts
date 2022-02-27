@@ -1,1 +1,1 @@
-export const APP_ROUTE_PREFIX_PATH = '/react-sub';
+export const APP_ROUTE_PREFIX_PATH = '/subApp/react-sub';

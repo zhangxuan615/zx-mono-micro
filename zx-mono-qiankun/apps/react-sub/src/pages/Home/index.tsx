@@ -6,11 +6,10 @@ import styles from './index.less';
 
 function Home() {
   const [cnt, setCnt] = useState(0);
-  console.log('home');
 
   return (
     <div className={styles['home-container']}>
-      Home23421dafd123eee112122
+      react-spa子应用 home
       <div>{cnt}</div>
       <Button onClick={() => setCnt(pre => pre + 1)}>点击</Button>
       <UserInfo></UserInfo>

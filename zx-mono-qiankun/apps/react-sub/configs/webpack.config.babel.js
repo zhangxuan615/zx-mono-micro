@@ -11,6 +11,7 @@ export default {
     libraryTarget: 'umd',
     globalObject: 'window',
     chunkLoadingGlobal: 'sub-react-global',
+
     path: isProduction ? absolutePath('./build') : void 0,
     filename: isProduction ? 'js/[name].[contenthash:8].js' : 'js/[name].bundle.js', // 生产需要使用 contentHash 做配合强缓存
     publicPath: `//localhost:${PORT}/`,

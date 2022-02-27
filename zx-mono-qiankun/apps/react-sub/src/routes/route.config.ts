@@ -7,9 +7,29 @@ import { APP_ROUTE_PREFIX_PATH } from '@/configs/env';
 export const contentRoutes: RouteConfig[] = [
   {
     path: '/home',
-    title: 'aaa',
+    title: 'home',
     exact: true,
     component: LazyLoadCom(() => import(/* webpackChunkName:"home"*/ '../pages/Home'))
+  },
+  {
+    path: '/delivery',
+    title: 'delivery',
+    exact: true,
+    component: LazyLoadCom(
+      () => import(/* webpackChunkName:"delivery"*/ '../pages/product/Delivery')
+    )
+  },
+  {
+    path: '/order',
+    title: 'order',
+    exact: true,
+    component: LazyLoadCom(() => import(/* webpackChunkName:"delivery"*/ '../pages/product/Order'))
+  },
+  {
+    path: '/sales',
+    title: 'sales',
+    exact: true,
+    component: LazyLoadCom(() => import(/* webpackChunkName:"delivery"*/ '../pages/product/sales'))
   }
 ];
 
