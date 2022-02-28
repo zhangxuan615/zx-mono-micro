@@ -63,13 +63,13 @@ export const listenRoute = () => {
   // const mouseEvent = new MouseEvent('click', {});
   // div1.dispatchEvent(mouseEvent);
   // 1. 重写 pushState 以及 replaceState 方法
-  window.history.pushState = (...args) => {
-    originalPush.apply(this, args);
-    args[2] && reRoute(args[2] as string);
+  window.history.pushState = (data: any, unused: string, url: string) => {
+    originalPush.call(this, data, unused, url);
+    url && reRoute(url);
   };
-  window.history.replaceState = (...args) => {
-    originalReplace.apply(window.history, args);
-    args[2] && reRoute(args[2] as string);
+  window.history.replaceState = (data: any, unused: string, url: string) => {
+    originalReplace.call(this, data, unused, url);
+    url && reRoute(url);
   };
 
   // 2. 监听 popstate 事件

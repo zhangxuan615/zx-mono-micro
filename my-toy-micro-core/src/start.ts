@@ -1,3 +1,4 @@
+import { registerMicroApps } from './../../toy-micro-main/src/start';
 import { getAppList, setAppList } from './appList';
 import { setLifeCycle } from './lifeCycle';
 import { IAppInfo, IInternalAppInfo, ILifeCycle, AppStatusEn } from './types';
@@ -12,10 +13,7 @@ import { importEntry } from 'import-html-entry';
  *   2. mounted  挂载子应用后
  *   3. unmounted  卸载子应用后
  */
-export const registerMicroApps = (
-  appList: IAppInfo[],
-  lifeCycle?: ILifeCycle
-) => {
+const registerMicroApps = (appList: IAppInfo[], lifeCycle?: ILifeCycle) => {
   setAppList(appList);
   lifeCycle && setLifeCycle(lifeCycle);
 };
@@ -23,7 +21,7 @@ export const registerMicroApps = (
 /**
  * 启动微前端
  */
-export const start = () => {
+const start = () => {
   const list = getAppList();
   if (!list.length) {
     throw new Error('请先注册应用');
@@ -48,7 +46,7 @@ export const start = () => {
  * js 资源
  */
 
-export const prefetch = async (app: IInternalAppInfo) => {
+const prefetch = async (app: IInternalAppInfo) => {
   requestIdleCallback(async () => {
     const { getExternalScripts, getExternalStyleSheets } = await importEntry(
       app.entry
@@ -57,3 +55,5 @@ export const prefetch = async (app: IInternalAppInfo) => {
     requestIdleCallback(getExternalScripts);
   });
 };
+
+export { registerMicroApps, start };

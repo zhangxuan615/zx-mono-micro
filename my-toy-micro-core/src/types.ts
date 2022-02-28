@@ -23,7 +23,10 @@ export type LifeCycle = (app: IAppInfo) => Promise<any>;
 export interface IAppInfo {
   name: string; // 子应用名词
   entry: string; // 子应用的资源入口
-  activeRule: string; // 在哪些路由下渲染该子应用
+  activeRule:
+    | string
+    | ((location: string) => boolean)
+    | Array<string | ((location: string) => boolean)>; // 在哪些路由下渲染该子应用
   container: string; // 主应用渲染子应用的节点
 }
 
