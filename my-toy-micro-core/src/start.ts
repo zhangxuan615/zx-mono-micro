@@ -1,4 +1,3 @@
-import { registerMicroApps } from './../../toy-micro-main/src/start';
 import { getAppList, setAppList } from './appList';
 import { setLifeCycle } from './lifeCycle';
 import { IAppInfo, IInternalAppInfo, ILifeCycle, AppStatusEn } from './types';
