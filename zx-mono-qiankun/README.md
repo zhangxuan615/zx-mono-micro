@@ -2,7 +2,7 @@
 
 让业务开发 100% 聚焦在业务逻辑上
 
-# 使用 lerna 初始化项目
+# 使用 lerna 初始化项目1
 
 1. 初始化项目：`npx lerna init`
    - `--independent/-i` 使用独立的 版本控制模式
